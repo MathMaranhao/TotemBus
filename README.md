@@ -1,6 +1,8 @@
 # TotemBus
 Projeto de Implementação de um CRUD para adicionar itens de itinerários de uma rota de ônibus com a utilização da metodologia XP
 
+Link para acessar a documentaçao no google docs: https://docs.google.com/document/d/1e296veHpzyxaluV_H3vixfmxF5lEik3FnjeY1kmCCcs/edit?usp=sharing
+
 ## DOR
 
 ## DOD
