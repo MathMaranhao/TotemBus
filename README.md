@@ -47,7 +47,27 @@ Link para acessar a documentaçao no google docs: https://docs.google.com/docume
 
 ## Tarefas (Padrão SMART)
 
+Id  |Tarefa                                                             | Tempo de Execução (Dias) | Resposavel
+:--:| :---------                                                        | :------:                 | :---------: 
+01  | Organizar o projeto de acordo com o padrão MVC                    | 1                        | Gabriel
+02  | Criação da classe de conexão com o banco de dados                 | 1                        | Gabriel
+03  | Criação do Model Item de Itinerário e tipo do item de itinerário  | 1                        | Gabriel
+04  | Desenvolver a  funcionalidade de cadastrar um item de itinerário  | 2                        | Matheus
+05  | Desenvolver a funcionalidade de alterar um item de itinerário     | 2                        | Matheus
+06  | Desenvolver a funcionalidade de excluir um item de itinerário     | 2                        | Matheus
+07  | Desenvolver a funcionalidade de pesquisar um item de itinerário   | 1                        | Matheus
+08  | Desenvolver o Front-end da aplicação                              | 3                        | Matheus
+09  | Testar todas as funcionalidades                                   | 2                        | Gabriel
+10  | Integrar todas as funcionalidades desenvolvidas                   | 2                        | Gabriel
+
 ## Exemplo de Refatoração
+
+~~~java
+
+
+
+~~~
+
 
 ## Exemplo de Teste
 
