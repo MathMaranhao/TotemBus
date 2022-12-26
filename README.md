@@ -62,14 +62,84 @@ Id  |Tarefa                                                             | Tempo 
 
 ## Exemplo de Refatoração
 
+* Codigo não refatorado
+
 ~~~java
 
+private void btnCadastrarItemItinerarioActionPerformed(java.awt.event.ActionEvent evt) {
 
+        if (jtfId.getText().isEmpty()) {
+            if (!jtfDescricao.getText().isEmpty() && !cbxTipoItemItinerario.getSelectedItem().equals("Selecione")) {
+                ModelItemItinerario = new ModelItemItinerario();
+                ModelItemItinerario.setDescricaoItem(jtfDescricao.getText());
+                ModelItemItinerario.setIdTipoItem(idTipoItemItinerario.get(cbxTipoItemItinerario.getSelectedIndex() - 1));
 
+                if (controllerItemItinerario.cadastrarItemItinerario(ModelItemItinerario)) {
+                    JOptionPane.showMessageDialog(this, "Item cadastrado com sucesso", "Atenção", JOptionPane.INFORMATION_MESSAGE);
+                    limparItensDeCadastro();
+                    carregarTabelaItensItinerario();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Erro ao cadastrar o item", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao cadastrar o item, pois um item está selecionado", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
+
+~~~
+
+* Codigo Refatorado
+~~~java
+public boolean validarCampoIdParaCadastro() {
+        if (jtfId.getText().isEmpty()) {
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(this, "Não foi possivel cadastrar pois um item está selecionado, favor limpar os campos", "Erro", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+    
+public boolean validarCampoDescricao() {
+        if (jtfDescricao.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "A descrição não pode ser vazia", "Erro", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+public boolean validarCampoTipo() {
+        if (cbxTipoItemItinerario.getSelectedItem().equals("Selecione")) {
+            JOptionPane.showMessageDialog(this, "O campo tipo não pode ser vazio", "Erro", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+private void btnCadastrarItemItinerarioActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+
+        if (validarCampoIdParaCadastro() == true && validarCampoDescricao() == true && validarCampoTipo() == true) {
+            ModelItemItinerario = new ModelItemItinerario();
+            ModelItemItinerario.setDescricaoItem(jtfDescricao.getText());
+            ModelItemItinerario.setIdTipoItem(idTipoItemItinerario.get(cbxTipoItemItinerario.getSelectedIndex() - 1));
+
+            if (controllerItemItinerario.cadastrarItemItinerario(ModelItemItinerario)) {
+                JOptionPane.showMessageDialog(this, "Item cadastrado com sucesso", "Atenção", JOptionPane.INFORMATION_MESSAGE);
+                limparItensDeCadastro();
+                carregarTabelaItensItinerario();
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao cadastrar o item", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }  
 ~~~
 
 
 ## Exemplo de Teste
+
+
 
 ## Tela de Cadastro de Intinerarios
 
