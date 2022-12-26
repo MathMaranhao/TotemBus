@@ -139,14 +139,10 @@ private void btnCadastrarItemItinerarioActionPerformed(java.awt.event.ActionEven
 ~~~
 
 
+
 ## Exemplo de Teste
 
 
 
-## Tela de Cadastro de Intinerarios
-
-![](https://github.com/MathMaranhao/TotemBus/blob/main/Tela%20de%20Cadastro%20dos%20itens%20de%20itinerario.png)
-
-
-
-
+## Tela de Cadastro de Itinerarios
+![Tela-de-cadastro-de-itens-de-itinerario-TotemBus](https://user-images.githubusercontent.com/120689953/209583679-a0c25ef0-a8ac-46d7-b23b-4933c6bfb795.png)
