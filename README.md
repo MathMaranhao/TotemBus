@@ -1,6 +1,6 @@
 # TotemBus 🚌
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+![Concluido](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
 
 Projeto de Implementação de um CRUD para adicionar itens de itinerários de uma rota de ônibus com a utilização da metodologia XP
 
@@ -142,7 +142,23 @@ private void btnCadastrarItemItinerarioActionPerformed(java.awt.event.ActionEven
 
 ## Exemplo de Teste
 
+~~~Java
 
+@Test
+    public void testCadastrarItemItinerarioRepetido() {
+        
+        System.out.println("cadastrarItemItinerarioController");
+        ControllerItemItinerario controller = new ControllerItemItinerario();
+        List<ModelItemItinerario> listaItensCadastrados = new ArrayList<>();
+        listaItensCadastrados = controller.getListaItensItineraioController();
+        
+        ModelItemItinerario itemItinerario = listaItensCadastrados.get(0);
+        
+        assertEquals(false, controller.cadastrarItemItinerarioController(itemItinerario));
+        
+    }
+
+~~~
 
 ## Tela de Cadastro de Itinerarios
 ![Tela-de-cadastro-de-itens-de-itinerario-TotemBus](https://user-images.githubusercontent.com/120689953/209583679-a0c25ef0-a8ac-46d7-b23b-4933c6bfb795.png)
